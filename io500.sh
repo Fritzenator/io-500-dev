@@ -59,8 +59,8 @@ function setup_paths {
   io500_ior_cmd=$PWD/bin/ior
   io500_mdtest_cmd=$PWD/bin/mdtest
   io500_mdreal_cmd=$PWD/bin/md-real-io
-  io500_mpirun="mpirun"
-  io500_mpiargs="-np 2"
+  io500_mpirun="jsrun"
+  io500_mpiargs="-n 2 -r 1 -a 1 -c 1"
 }
 
 function setup_ior_easy {
@@ -93,8 +93,8 @@ function setup_find {
   #    If a custom approach is used, please provide enough info so others can reproduce.
 
   # the serial version that should run (SLOWLY) without modification
-  #io500_find_mpi="True"
-  #io500_find_cmd=$PWD/bin/pfind
+  #io500_find_mpi="False"
+  #io500_find_cmd=$PWD/bin/sfind.sh
   #io500_find_cmd_args=""
 
   # a parallel version in C, the -s adds a stonewall
@@ -110,8 +110,8 @@ function setup_find {
   #   Then you can set io500_find_mpi to be "False" and write a wrapper
   #   script for this which sets up MPI as you would like.  Then change
   #   io500_find_cmd to point to your wrapper script.
-  io500_find_mpi="False"
-  io500_find_cmd="$PWD/bin/sfind.sh"
+  io500_find_mpi="True"
+  io500_find_cmd="$PWD/bin/pfind"
   # uses stonewalling, run pfind
   io500_find_cmd_args=""
 
