@@ -64,7 +64,7 @@ function setup_paths {
 }
 
 function setup_ior_easy {
-  io500_ior_easy_params="-t 2048k ""
+  io500_ior_easy_params="-t 2048k "
   echo -n ""
 }
 
