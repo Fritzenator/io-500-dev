@@ -64,7 +64,7 @@ function setup_paths {
 }
 
 function setup_ior_easy {
-  #io500_ior_easy_params="-t 2048k -b \${io500_ior_easy_size}m -F"
+  io500_ior_easy_params="-t 2048k ""
   echo -n ""
 }
 
@@ -93,8 +93,8 @@ function setup_find {
   #    If a custom approach is used, please provide enough info so others can reproduce.
 
   # the serial version that should run (SLOWLY) without modification
-  #io500_find_mpi="False"
-  #io500_find_cmd=$PWD/bin/sfind.sh
+  #io500_find_mpi="True"
+  #io500_find_cmd=$PWD/bin/pfind
   #io500_find_cmd_args=""
 
   # a parallel version in C, the -s adds a stonewall
